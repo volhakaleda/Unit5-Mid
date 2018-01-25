@@ -8,7 +8,7 @@ import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
 
-  private List<Person> people = new ArrayList<>();
+  private List<User> people = new ArrayList<>();
 
   @Override
   public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -18,7 +18,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
 
   @Override
   public void onBindViewHolder(CustomViewHolder holder, int position) {
-    Person person = people.get(position);
+    User person = people.get(position);
     holder.bind(person);
 
   }
@@ -28,7 +28,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
     return people.size();
   }
 
-  public void setData(List<Person> people) {
+  public void setData(List<User> people) {
     this.people = people;
   }
 

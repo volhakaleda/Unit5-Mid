@@ -21,7 +21,7 @@ public class CustomViewHolder extends RecyclerView.ViewHolder {
     image = itemView.findViewById(R.id.image);
   }
 
-  public void bind(final Person person) {
+  public void bind(final User person) {
     first.setText(person.getName().getFirst());
     last.setText(person.getName().getLast());
     Picasso.with(itemView.getContext()).load(person.getPicture().getThumbnail()).into(image);

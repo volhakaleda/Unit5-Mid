@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     response.enqueue(new Callback<Response>() {
       @Override
       public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
-        List<Person> people = response.body().getResults();
+        List<User> people = response.body().getResults();
         adapter.setData(people);
         adapter.notifyDataSetChanged();
       }

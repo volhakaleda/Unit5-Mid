@@ -21,7 +21,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView address2 = findViewById(R.id.address_two);
     TextView dob = findViewById(R.id.dob);
 
-    Person person = getIntent().getParcelableExtra("person");
+    User person = getIntent().getParcelableExtra("person");
     Picasso.with(this).load(person.getPicture().getLarge()).into(imageView);
 
     name.setText(person.getName().getFirst() + " " + person.getName().getLast());

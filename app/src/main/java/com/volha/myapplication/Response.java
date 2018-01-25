@@ -3,9 +3,9 @@ package com.volha.myapplication;
 import java.util.List;
 
 public class Response {
-  private List<Person> results;
+  private List<User> results;
 
-  public List<Person> getResults() {
+  public List<User> getResults() {
     return results;
   }
 }

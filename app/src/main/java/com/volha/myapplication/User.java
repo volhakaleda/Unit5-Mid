@@ -3,7 +3,7 @@ package com.volha.myapplication;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Person implements Parcelable {
+public class User implements Parcelable {
 
     private Name name;
     private Location location;
@@ -51,10 +51,10 @@ public class Person implements Parcelable {
     dest.writeParcelable(this.picture, flags);
   }
 
-  public Person() {
+  public User() {
   }
 
-  protected Person(Parcel in) {
+  protected User(Parcel in) {
     this.name = in.readParcelable(Name.class.getClassLoader());
     this.location = in.readParcelable(Location.class.getClassLoader());
     this.email = in.readString();
@@ -63,15 +63,15 @@ public class Person implements Parcelable {
     this.picture = in.readParcelable(Picture.class.getClassLoader());
   }
 
-  public static final Creator<Person> CREATOR = new Creator<Person>() {
+  public static final Creator<User> CREATOR = new Creator<User>() {
     @Override
-    public Person createFromParcel(Parcel source) {
-      return new Person(source);
+    public User createFromParcel(Parcel source) {
+      return new User(source);
     }
 
     @Override
-    public Person[] newArray(int size) {
-      return new Person[size];
+    public User[] newArray(int size) {
+      return new User[size];
     }
   };
 }
