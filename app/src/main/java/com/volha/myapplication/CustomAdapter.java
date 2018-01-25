@@ -1,22 +1,36 @@
 package com.volha.myapplication;
 
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.List;
 
-public class CustomAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
+
+  private List<Person> people = new ArrayList<>();
+
   @Override
-  public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-    return null;
+  public CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+    return new CustomViewHolder(inflater.inflate(R.layout.view_holder_layout, parent, false));
   }
 
   @Override
-  public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+  public void onBindViewHolder(CustomViewHolder holder, int position) {
+    Person person = people.get(position);
+    holder.bind(person);
 
   }
 
   @Override
   public int getItemCount() {
-    return 0;
+    return people.size();
   }
+
+  public void setData(List<Person> people) {
+    this.people = people;
+  }
+
 }
 
